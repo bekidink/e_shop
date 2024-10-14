@@ -1,5 +1,4 @@
 import 'package:e_shop/features/authentication/screens/onboarding.dart';
-import 'package:e_shop/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {

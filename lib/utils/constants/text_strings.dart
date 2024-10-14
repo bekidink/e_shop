@@ -10,4 +10,5 @@ class TTexts{
 
   static const String homeAppbarTitle="Good day of shopping";
   static const String homeAppbarSubTitle="beki dink";
+  static const String email="Email";
 }
