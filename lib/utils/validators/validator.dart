@@ -1,8 +1,7 @@
-import 'dart:math';
 
 class TValidator{
   static String? validateEmail(String value){
-    if(value==null || value.isEmpty){
+    if(value.isEmpty){
       return 'Email is Required';
     }
     final emailRegExp=RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");

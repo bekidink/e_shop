@@ -25,7 +25,7 @@ return '(${phoneNumber.substring(0,3)}) (${phoneNumber.substring(3,6)}) (${phone
     String countryCode='+${digitsOnly.substring(0,2)}';
     digitsOnly=digitsOnly.substring(2);
     final formattedNumber=StringBuffer();
-    formattedNumber.write('${countryCode}');
+    formattedNumber.write(countryCode);
     int i=0;
     while(i<digitsOnly.length){
       int groupLength=2;

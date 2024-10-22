@@ -35,6 +35,7 @@ class THelperFunctions{
     else if(value=="Indigo"){
       return Colors.indigo;
     }
+    return null;
   }
   static void showSnackBar(BuildContext context,String message){
     ScaffoldMessenger.of(context).showSnackBar(

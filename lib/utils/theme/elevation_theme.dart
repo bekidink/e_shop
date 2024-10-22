@@ -10,8 +10,8 @@ class TElevation{
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.grey,
       side: const BorderSide(color: Colors.blue),
-      padding: EdgeInsets.symmetric(vertical: 10),
-      textStyle: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      textStyle: const TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
     )
   );
@@ -23,8 +23,8 @@ class TElevation{
       disabledForegroundColor: Colors.grey,
       disabledBackgroundColor: Colors.grey,
       side: const BorderSide(color: Colors.blue),
-      padding: EdgeInsets.symmetric(vertical: 10),
-      textStyle: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      textStyle: const TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
     )
   );

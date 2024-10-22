@@ -5,7 +5,6 @@ import 'package:e_shop/utils/constants/text_strings.dart';
 import 'package:e_shop/utils/device/device_utility.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -22,7 +21,7 @@ class OnBoardingScreen extends StatelessWidget {
           PageView(
             onPageChanged: controller.updatePageIndicator,
             controller: controller.pageController,
-            children: [
+            children: const [
               OnBoardingPage(imageUrl: 'assets/images/auth_bg.png', title: TTexts.onBoardingTitle1, subTitle: TTexts.onBoardingSubTitle1),
                OnBoardingPage(imageUrl: 'assets/images/auth_bg.png', title: TTexts.onBoardingTitle2, subTitle: TTexts.onBoardingSubTitle2),
                 OnBoardingPage(imageUrl: 'assets/images/auth_bg.png', title: TTexts.onBoardingTitle3, subTitle: TTexts.onBoardingSubTitle3)
@@ -32,12 +31,12 @@ class OnBoardingScreen extends StatelessWidget {
         ,
         Positioned(top: TDeviceUtility.getAppBarHeight(),right: TSizes.defaultSpace, child: TextButton(onPressed: (){
           controller.skipPage();
-        }, child: Text("Skip"))),
+        }, child: const Text("Skip"))),
         Positioned(
           left: TSizes.defaultSpace,
         
           bottom:TDeviceUtility.getBottomnavigationBarHeight() +25 ,
-          child: SmoothPageIndicator(controller: controller.pageController,count:3 ,onDotClicked: controller.dotNavigationClick,effect:  ExpandingDotsEffect(activeDotColor: TColors.dark,dotHeight: 4),)),
+          child: SmoothPageIndicator(controller: controller.pageController,count:3 ,onDotClicked: controller.dotNavigationClick,effect:  const ExpandingDotsEffect(activeDotColor: TColors.dark,dotHeight: 4),)),
 
           Positioned(
             right: TSizes.defaultSpace,
@@ -45,8 +44,8 @@ class OnBoardingScreen extends StatelessWidget {
             child: ElevatedButton(onPressed: (){
               controller.nextPage();
             }, 
-          style: ElevatedButton.styleFrom(shape: CircleBorder(),backgroundColor: Colors.black),
-          child: Icon(
+          style: ElevatedButton.styleFrom(shape: const CircleBorder(),backgroundColor: Colors.black),
+          child: const Icon(
             Icons.arrow_right,
             color: Colors.white,
           )))
@@ -62,7 +61,7 @@ final String imageUrl,title,subTitle;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
       child: Column(
                 children: [
                   Image(
