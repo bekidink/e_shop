@@ -32,11 +32,14 @@ final bool selectedAddress;
           Column(
             children: [
               Text(
-                '12345 Timmy Coves,South Liane,Maine,87665,USA',maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge,
+                'beki',maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge,
               ),
 SizedBox(height: TSizes.sm/2,),
 Text('(+251)972269598',maxLines: 1,overflow: TextOverflow.ellipsis,),
-SizedBox(height: TSizes.sm/2,)
+SizedBox(height: TSizes.sm/2,),
+ Text(
+                '12345 Timmy Coves,South Liane,Maine,87665,USA',maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge,
+              ),
             ],
           )
         ],

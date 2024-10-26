@@ -10,19 +10,20 @@ import '../image/circular_image.dart';
 import 'brand_title.dart';
 
 class TBrandCard extends StatelessWidget {
-  const TBrandCard({super.key,  this.showBorder=true});
+  const TBrandCard({super.key,  this.showBorder=true, this.onTap});
 final bool showBorder;
+final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return  GestureDetector(
-                onTap: (){},
+                onTap: onTap,
                  child: TRoundedContainer(
                   padding:const EdgeInsets.all(TSizes.sm),
                   showBorder: showBorder,
                   backgroundColor: Colors.transparent,
                   child: Row(
                     children: [
-                     Flexible(child: TCircularImage(image: TImages.electronic,backgroundColor: Colors.transparent,overlayColor: THelperFunctions.isDarkMode(context)?TColors.white:TColors.black,isNetworkImage: false,)),
+                     Flexible(child: TCircularImage(image: TImages.fashion,backgroundColor: Colors.transparent,overlayColor: THelperFunctions.isDarkMode(context)?TColors.white:TColors.black,isNetworkImage: false,)),
                      const SizedBox(width: TSizes.spaceBtwItems/2,),
                       Expanded(
                         child: Column(

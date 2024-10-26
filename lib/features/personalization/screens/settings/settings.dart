@@ -5,6 +5,7 @@ import 'package:e_shop/features/personalization/screens/address/address.dart';
 import 'package:e_shop/features/personalization/screens/profile/profile.dart';
 import 'package:e_shop/features/personalization/screens/widgets/menu_tile.dart';
 import 'package:e_shop/features/shop/screens/home/home.dart';
+import 'package:e_shop/features/shop/screens/order/order.dart';
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/images.dart';
 import 'package:e_shop/utils/constants/size.dart';
@@ -34,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwItems,),
                  TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery',onTap: ()=>Get.to(()=>AddressScreen()),),
                 const TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product'),
-                const TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and complete'),
+                 TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and complete',onTap: ()=>Get.to(()=>OrderScreen()),),
                 const TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
                 const TSettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discount coupon'),
                 const TSettingMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),

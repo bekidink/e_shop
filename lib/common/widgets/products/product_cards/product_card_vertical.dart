@@ -40,8 +40,10 @@ class ProductCardVertical extends StatelessWidget {
               backgroundColor: dark?TColors.black:TColors.light,
             child: Stack(
               children: [
-             const  RoundedImage(imageUrl: TImages.fashion),
-                Positioned(child: TRoundedContainer(
+             const  RoundedImage(imageUrl: TImages.fashion,applyImageRadius: true,),
+                Positioned(
+                  top: 12,
+                  child: TRoundedContainer(
                   radius: TSizes.sm,
                   backgroundColor: TColors.secondary.withOpacity(.8),
                   padding: const EdgeInsets.symmetric(horizontal: TSizes.sm,vertical: TSizes.xs),
@@ -56,31 +58,34 @@ class ProductCardVertical extends StatelessWidget {
             ),
             const SizedBox(height: TSizes.spaceBtwItems/2),
             Padding(padding:const EdgeInsets.only(left: TSizes.md),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-             const   ProductTitle(title: 'Green Nike Air Shoes'),
-                const SizedBox(height: TSizes.xs,),
-                
-              const  TBrandTitleWithVerifiedIcon(title: 'Nike'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                   const TProductPriceText(price: '45'),
-                    Container(decoration: const BoxDecoration(
-                      color: TColors.dark,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(TSizes.cardRadiusMd),
-                        bottomRight: Radius.circular(TSizes.productImageRadius)
-                      )
-                    ),child: const SizedBox(
-                      width: TSizes.iconLg*1.2,
-                      height: TSizes.iconLg*1.2,
-                      child: Icon(Iconsax.add,color: TColors.white,),
-                    ),)
-                  ],
-                )
-              ],
+            child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+               const   ProductTitle(title: 'Green Nike Air Shoes'),
+                  const SizedBox(height: TSizes.xs,),
+                  
+                const  TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                     const TProductPriceText(price: '45'),
+                      Container(decoration: const BoxDecoration(
+                        color: TColors.dark,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(TSizes.cardRadiusMd),
+                          bottomRight: Radius.circular(TSizes.productImageRadius)
+                        )
+                      ),child: const SizedBox(
+                        width: TSizes.iconLg*1.2,
+                        height: TSizes.iconLg*1.2,
+                        child: Icon(Iconsax.add,color: TColors.white,),
+                      ),)
+                    ],
+                  )
+                ],
+              ),
             ),
             )
           ],

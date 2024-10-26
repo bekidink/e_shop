@@ -1,5 +1,7 @@
 
+import 'package:e_shop/features/shop/screens/categories/sub-categories/sub_categories.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../common/widgets/image/vertical_I_text.dart';
 import '../../../../../utils/constants/colors.dart';
@@ -19,7 +21,7 @@ class THomeCategories extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_,index){
-      return const  TVerticalImageText( image: TImages.electronic, title: 'Shop categories', textColor: TColors.white,);
+      return   TVerticalImageText( image: TImages.electronic, title: 'Shop categories', textColor: TColors.white,onTap: ()=>Get.to(()=>SubCategoriesScreen()),);
       }),
     );
   }

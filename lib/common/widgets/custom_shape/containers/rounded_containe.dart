@@ -25,6 +25,7 @@ final EdgeInsetsGeometry? margin;
         borderRadius: BorderRadius.circular(radius),
         border: showBorder?Border.all(color: borderColor):null
       ),
+      child: child,
     );
   }
 }

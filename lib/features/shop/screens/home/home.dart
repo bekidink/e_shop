@@ -1,12 +1,15 @@
 import 'package:e_shop/common/widgets/appbar/appbar.dart';
 import 'package:e_shop/common/widgets/layouts/grid_layout.dart';
 import 'package:e_shop/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:e_shop/features/shop/screens/all_products/all_products.dart';
+import 'package:e_shop/features/shop/screens/cart/cart.dart';
 import 'package:e_shop/utils/constants/images.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/constants/text_strings.dart';
 import 'package:e_shop/utils/device/device_utility.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/custom_shape/containers/circular_container.dart';
@@ -30,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body:SingleChildScrollView(
         child: Column(
           children: [
-            const TPrimaryHeaderContainer(
+             TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   THomeAppbar(),
@@ -39,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(height: TSizes.spaceBtwSections,),
                   Padding(padding: EdgeInsets.only(left: TSizes.defaultSpace),child: Column(
                     children: [
-                  HeadingTitle(title:  'Popular Categories',),
+                  HeadingTitle(title:  'Popular Categories',onPressed: ()=>Get.to(()=>AllProducts()),),
                     SizedBox(height: TSizes.spaceBtwItems,),
                       THomeCategories(
                         
@@ -58,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             )
             ),
-         const   HeadingTitle(title: 'Popular Product',showActionButton: true,),
+            HeadingTitle(title: 'Popular Product',showActionButton: true,buttonTitle: 'View All',onPressed: ()=>Get.to(()=>AllProducts()),),
             TGridLayout(itemCount: 4, itemBuilder: (_,index)=>const ProductCardVertical()),
 
             
@@ -113,7 +116,7 @@ class THomeAppbar extends StatelessWidget {
         ],
       ),
       actions: [
-        TCartCounterIcon( onPressed: (){},)
+        TCartCounterIcon( onPressed: ()=>Get.to(()=>CartScreen()),)
       ],
     );
   }
