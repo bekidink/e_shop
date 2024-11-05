@@ -10,7 +10,7 @@ class AllProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: TAppBar(title: Text('Popular Products',),showBackArrow: true,),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
@@ -31,7 +31,7 @@ class TSortableProducts extends StatelessWidget {
     return Column(
       children: [
         DropdownButtonFormField(
-          decoration: InputDecoration(prefixIcon: Icon(Iconsax.sort)),
+          decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
           items: [
         'Name',
         'Higher Price',
@@ -39,8 +39,8 @@ class TSortableProducts extends StatelessWidget {
         'Sale',
         'Popularity'
         ].map((e) =>DropdownMenuItem( value: e,child: Text(e)) ).toList(), onChanged: (value){}),
-        SizedBox(height: TSizes.spaceBtwSections,),
-        TGridLayout(itemCount: 4, itemBuilder: (_,index)=>ProductCardVertical())
+        const SizedBox(height: TSizes.spaceBtwSections,),
+        TGridLayout(itemCount: 4, itemBuilder: (_,index)=>const ProductCardVertical())
       ],
     );
   }

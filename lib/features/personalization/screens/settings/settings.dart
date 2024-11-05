@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../controllers/user/user_controller.dart';
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -31,11 +33,11 @@ class SettingsScreen extends StatelessWidget {
             Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
-                const HeadingTitle(title: 'Account Settings',showActionButton: false,),
+                // const HeadingTitle(title: 'Account Settings',showActionButton: false,),
                 const SizedBox(height: TSizes.spaceBtwItems,),
-                 TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery',onTap: ()=>Get.to(()=>AddressScreen()),),
+                 TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery',onTap: ()=>Get.to(()=>const AddressScreen()),),
                 const TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product'),
-                 TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and complete',onTap: ()=>Get.to(()=>OrderScreen()),),
+                 TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and complete',onTap: ()=>Get.to(()=>const OrderScreen()),),
                 const TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
                 const TSettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discount coupon'),
                 const TSettingMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),
@@ -65,10 +67,11 @@ class TUserProductTile extends StatelessWidget {
 final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
+    final controller=Get.put(UserController());
     return ListTile(
       leading: const TCircularImage(image: TImages.electronic, width: 50, height: 50,padding: 0,),
-      title: Text('Coding with T',style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white),),
-      subtitle: Text('support@codingwithb.com',style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),),
+      title: Text(controller.user.value.fullName,style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white),),
+      subtitle: Text(controller.user.value.email,style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),),
       trailing: IconButton(onPressed: (){}, icon: const Icon(Iconsax.edit,color: TColors.white,)),
       onTap:onTap ,
     );

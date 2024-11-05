@@ -13,14 +13,14 @@ class AllBrandsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar( title: Text('Brand'), showBackArrow: true,),
+      appBar: const TAppBar( title: Text('Brand'), showBackArrow: true,),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           children: [
-            HeadingTitle(title: 'Brands'),
-            SizedBox(height: TSizes.spaceBtwItems,),
-            TGridLayout(itemCount: 20, mainAxisExtent: 80,itemBuilder: (_,index)=>TBrandCard(showBorder: true, onTap: ()=>Get.to(()=>BrandProducts()),))
+            const HeadingTitle(title: 'Brands'),
+            const SizedBox(height: TSizes.spaceBtwItems,),
+            TGridLayout(itemCount: 20, mainAxisExtent: 80,itemBuilder: (_,index)=>TBrandCard(showBorder: true, onTap: ()=>Get.to(()=>const BrandProducts()),))
           ],
         ),
         ),

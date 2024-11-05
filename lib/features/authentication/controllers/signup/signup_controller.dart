@@ -9,7 +9,6 @@ import 'package:e_shop/utils/popups/full_screen_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../screens/onboarding.dart';
 
 class SignupController extends GetxController{
   static SignupController get instance => Get.find();

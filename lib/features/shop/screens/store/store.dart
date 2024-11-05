@@ -6,13 +6,15 @@ import 'package:e_shop/common/widgets/layouts/grid_layout.dart';
 import 'package:e_shop/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_shop/common/widgets/texts/heading_title.dart';
 import 'package:e_shop/features/shop/screens/brands/all_brands.dart';
-import 'package:e_shop/features/shop/screens/home/home.dart';
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/images.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../common/widgets/cart/cart_count_icon.dart';
+import '../../../../common/widgets/search/search_bar.dart';
 
 
 class StoreScreen extends StatefulWidget {
@@ -49,7 +51,7 @@ class _StoreScreenState extends State<StoreScreen> {
            const     SizedBox(height: TSizes.spaceBtwItems,),
           const      Searchbar(text: 'Search in Store',showBorder: true,showBackground: false,padding: EdgeInsets.zero,),
            const     SizedBox(height: TSizes.spaceBtwItems,),
-               HeadingTitle(title: 'Featured Brands',showActionButton: true,buttonTitle: 'View All',onPressed: ()=>Get.to(()=>AllBrandsScreen()),),
+               HeadingTitle(title: 'Featured Brands',showActionButton: true,buttonTitle: 'View All',onPressed: ()=>Get.to(()=>const AllBrandsScreen()),),
           const       SizedBox(height: TSizes.spaceBtwItems/2),
              TGridLayout(itemCount: 4, mainAxisExtent: 80,itemBuilder: (_,index){
               return    const TBrandCard(showBorder: false,);

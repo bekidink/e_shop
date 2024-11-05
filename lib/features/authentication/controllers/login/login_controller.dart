@@ -4,7 +4,6 @@ import 'package:e_shop/utils/constants/images.dart';
 import 'package:e_shop/utils/helpers/network_manager.dart';
 import 'package:e_shop/utils/loaders/loaders.dart';
 import 'package:e_shop/utils/popups/full_screen_loader.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -53,6 +52,7 @@ Future<void> googleSignIn()async{
 final userCredential=await AuthenticationRepository.instance.signInWithGoogle();
 await userController.saveUserRecord(userCredential);
       TFullScreenLoader.stopLoading();
+      AuthenticationRepository.instance.screenRedirect();
   }catch(e){
           TFullScreenLoader.stopLoading();
     TLoaders.errorSnackBar(title: 'Oh Snap',message: e.toString());

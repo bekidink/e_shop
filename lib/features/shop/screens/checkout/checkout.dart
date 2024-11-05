@@ -22,18 +22,18 @@ class CheckoutScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(showBackArrow: true, title: Text('Order Review',style: Theme.of(context).textTheme.headlineSmall,),),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           children: [
             CartItems(dark: dark,showIcons: false,),
-            SizedBox(height: TSizes.spaceBtwSections,),
+            const SizedBox(height: TSizes.spaceBtwSections,),
             TCouponCodeCard(dark: dark),
-            SizedBox(height: TSizes.spaceBtwSections,),
+            const SizedBox(height: TSizes.spaceBtwSections,),
             TRoundedContainer(
              
               showBorder: true,
               backgroundColor: dark?TColors.black:TColors.white,
-              child: Column(
+              child: const Column(
                 children: [
                   
                   TBillAmountSection(),
@@ -52,8 +52,8 @@ class CheckoutScreen extends StatelessWidget {
         ),
         ),
       ),
-    bottomNavigationBar:  Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
-      child: ElevatedButton(onPressed: ()=>Get.to(()=>SuccessScreen(image: TImages.successAnimation, title: 'payment Success!', subTitle: 'Your item will be shipped soon!', onPressed: ()=>Get.offAll(()=>NavigationMenu()))), child: Text('Checkout \256.0')),
+    bottomNavigationBar:  Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
+      child: ElevatedButton(onPressed: ()=>Get.to(()=>SuccessScreen(image: TImages.successAnimation, title: 'payment Success!', subTitle: 'Your item will be shipped soon!', onPressed: ()=>Get.offAll(()=>const NavigationMenu()))), child: const Text('Checkout 256.0')),
       ),
     );
   }
@@ -72,11 +72,11 @@ class TCouponCodeCard extends StatelessWidget {
     return TRoundedContainer(
       showBorder: true,
       backgroundColor: dark?TColors.dark:TColors.white,
-      padding: EdgeInsets.only(top: TSizes.sm,bottom: TSizes.sm,right: TSizes.sm,left: TSizes.sm),
+      padding: const EdgeInsets.only(top: TSizes.sm,bottom: TSizes.sm,right: TSizes.sm,left: TSizes.sm),
       child: Row(
         children: [
           Flexible(child: TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Have a promo code? Enter here',
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
@@ -96,7 +96,7 @@ class TCouponCodeCard extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.1)
                 )
               ),
-              onPressed: (){}, child: Text('Apply')))
+              onPressed: (){}, child: const Text('Apply')))
         ],
       ),
     );

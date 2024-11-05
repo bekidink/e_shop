@@ -7,7 +7,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/size.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
-import '../../verify/verify_email.dart';
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({super.key});
@@ -75,7 +74,7 @@ class TSignupForm extends StatelessWidget {
                       controller: controller.pasword,
                       validator: (value) => TValidator.validatePassword( value),
                       decoration:  InputDecoration(
-                        labelText: 'Password', suffixIcon: IconButton(icon: Icon (controller.hidePassword.value? Iconsax.eye_slash:Iconsax.eye),onPressed:()=>controller.hidePassword.value=!controller.hidePassword.value ,),prefixIcon: Icon(Iconsax.password_check)
+                        labelText: 'Password', suffixIcon: IconButton(icon: Icon (controller.hidePassword.value? Iconsax.eye_slash:Iconsax.eye),onPressed:()=>controller.hidePassword.value=!controller.hidePassword.value ,),prefixIcon: const Icon(Iconsax.password_check)
                       ),
                     ),
                   ),

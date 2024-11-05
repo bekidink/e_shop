@@ -2,7 +2,6 @@ import 'package:e_shop/common/widgets/custom_shape/containers/rounded_containe.d
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -15,10 +14,10 @@ final bool selectedAddress;
     return TRoundedContainer(
       width: double.infinity,
       showBorder: true,
-      padding: EdgeInsets.all(TSizes.md),
+      padding: const EdgeInsets.all(TSizes.md),
       backgroundColor:selectedAddress?TColors.primary.withOpacity(0.5):Colors.transparent ,
       borderColor: selectedAddress?Colors.transparent:dark?TColors.darkerGrey:TColors.grey,
-      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
       child:Stack(
         children: [
           Positioned(
@@ -34,9 +33,9 @@ final bool selectedAddress;
               Text(
                 'beki',maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge,
               ),
-SizedBox(height: TSizes.sm/2,),
-Text('(+251)972269598',maxLines: 1,overflow: TextOverflow.ellipsis,),
-SizedBox(height: TSizes.sm/2,),
+const SizedBox(height: TSizes.sm/2,),
+const Text('(+251)972269598',maxLines: 1,overflow: TextOverflow.ellipsis,),
+const SizedBox(height: TSizes.sm/2,),
  Text(
                 '12345 Timmy Coves,South Liane,Maine,87665,USA',maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.titleLarge,
               ),

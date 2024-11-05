@@ -22,24 +22,24 @@ class TProductAttributes extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  HeadingTitle(title: 'Variation',showActionButton: false,),
-                  SizedBox(width: TSizes.spaceBtwItems,),
+                  const HeadingTitle(title: 'Variation',showActionButton: false,),
+                  const SizedBox(width: TSizes.spaceBtwItems,),
                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                           ProductTitle(title: 'Price',smallSize: true,),
-                           SizedBox(width: TSizes.spaceBtwItems,),
+                           const ProductTitle(title: 'Price',smallSize: true,),
+                           const SizedBox(width: TSizes.spaceBtwItems,),
                           Text('\$25',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
-                          SizedBox(width: TSizes.spaceBtwItems,),
-                          TProductPriceText(price: '20')
+                          const SizedBox(width: TSizes.spaceBtwItems,),
+                          const TProductPriceText(price: '20')
                         ],
                       ),
                       Row(
                         children: [
-                          ProductTitle(title: 'Stock'),
+                          const ProductTitle(title: 'Stock'),
                           Text('In Stock',style: Theme.of(context).textTheme.titleMedium,)
                         ],
                       )
@@ -47,18 +47,18 @@ class TProductAttributes extends StatelessWidget {
                   )
                 ],
               ),
-              ProductTitle(title: 'This is the Description of the Product and it can go upto max 4 lines',smallSize: true, maxLines: 4,)
+              const ProductTitle(title: 'This is the Description of the Product and it can go upto max 4 lines',smallSize: true, maxLines: 4,)
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeadingTitle(title: 'Colors'),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const HeadingTitle(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             Wrap(
               spacing: 8,
               children: [
@@ -73,8 +73,8 @@ TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HeadingTitle(title: 'Colors'),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const HeadingTitle(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             Wrap(
               spacing: 8,
               children: [

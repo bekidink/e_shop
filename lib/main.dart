@@ -1,7 +1,6 @@
 import 'package:e_shop/data/repositories/authentication/authentication_rep.dart';
 import 'package:e_shop/features/authentication/screens/onboarding.dart';
 import 'package:e_shop/firebase_options.dart';
-import 'package:e_shop/navigation_menu.dart';
 import 'package:e_shop/utils/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

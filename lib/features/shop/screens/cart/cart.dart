@@ -10,7 +10,6 @@ import 'package:e_shop/utils/constants/images.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -23,12 +22,12 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(title: Text('Cart',style: Theme.of(context).textTheme.headlineSmall,),),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: CartItems(dark: dark),
         ),
       ),
-      bottomNavigationBar: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
-      child: ElevatedButton(onPressed: ()=>Get.to(()=>CheckoutScreen()), child: Text('Checkout \256.0')),
+      bottomNavigationBar: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
+      child: ElevatedButton(onPressed: ()=>Get.to(()=> const CheckoutScreen()), child: const Text('Checkout  256.0')),
       ),
     );
   }
@@ -48,19 +47,19 @@ class CartItems extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (_,index)=>Column(
       children: [
-        CartItem(),
-        SizedBox(height: TSizes.spaceBtwItems,),
+        const CartItem(),
+        const SizedBox(height: TSizes.spaceBtwItems,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(width: 70,),
+            const SizedBox(width: 70,),
            if(showIcons) TCartQuantity(dark: dark),
-          if(showIcons)  TProductPriceText(price: '300')
+          if(showIcons)  const TProductPriceText(price: '300')
     
           ],
         )
       ],
-    ), separatorBuilder:  (_,__)=>SizedBox(height: TSizes.spaceBtwSections,), itemCount: 4);
+    ), separatorBuilder:  (_,__)=>const SizedBox(height: TSizes.spaceBtwSections,), itemCount: 4);
   }
 }
 
@@ -78,9 +77,9 @@ class TCartQuantity extends StatelessWidget {
       child: Row(
         children: [
           TCircularIcon(icon: Iconsax.minus,width: 32,height: 32,size: TSizes.md, color:dark?TColors.white:TColors.black , backgroundColor: dark?TColors.darkerGrey:TColors.light,),
-          SizedBox(width: TSizes.spaceBtwItems,),
+          const SizedBox(width: TSizes.spaceBtwItems,),
           Text('3',style: Theme.of(context).textTheme.titleSmall,),
-          SizedBox(width: TSizes.spaceBtwItems,),
+          const SizedBox(width: TSizes.spaceBtwItems,),
           TCircularIcon(icon: Iconsax.add,width: 32,height: 32,size: TSizes.md, color:dark?TColors.white:TColors.black , backgroundColor: dark?TColors.darkerGrey:TColors.light,),
         ],
       ),
@@ -97,17 +96,17 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        RoundedImage(
+        const RoundedImage(
           padding: EdgeInsets.all(TSizes.sm),
           imageUrl: TImages.fashion,width: 60,height: 60,),
-          SizedBox(width: TSizes.spaceBtwItems,),
+          const SizedBox(width: TSizes.spaceBtwItems,),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TBrandTitleWithVerifiedIcon(title: 'Nike'),
-                ProductTitle(title: 'Black Sports shoes'),
+                const TBrandTitleWithVerifiedIcon(title: 'Nike'),
+                const ProductTitle(title: 'Black Sports shoes'),
                 Text.rich(
                   TextSpan(children: [
                     TextSpan(

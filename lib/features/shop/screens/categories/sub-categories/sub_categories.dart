@@ -12,13 +12,13 @@ class SubCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(title: Text('Sports ',),showBackArrow: true,),
+      appBar: const TAppBar(title: Text('Sports ',),showBackArrow: true,),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           children: [
-            RoundedImage(imageUrl: TImages.electronic,width: double.infinity,applyImageRadius: true,),
-            SizedBox(height: TSizes.spaceBtwSections,),
+            const RoundedImage(imageUrl: TImages.electronic,width: double.infinity,applyImageRadius: true,),
+            const SizedBox(height: TSizes.spaceBtwSections,),
             Column(
               children: [
                 HeadingTitle(title: 'Sports shirts',onPressed: (){},),
@@ -29,9 +29,9 @@ class SubCategoriesScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: 6,
                     shrinkWrap: true,
-                    separatorBuilder: (_,__)=>SizedBox(width: TSizes.spaceBtwItems,),
+                    separatorBuilder: (_,__)=>const SizedBox(width: TSizes.spaceBtwItems,),
                     itemBuilder: (_,index) {
-                      return ProductCardHorizontal();
+                      return const ProductCardHorizontal();
                     }
                   ),
                 )

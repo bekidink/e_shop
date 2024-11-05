@@ -8,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../login/login.dart';
 
 class VerifyEmail extends StatelessWidget {
   const VerifyEmail({super.key, this.email});

@@ -13,12 +13,12 @@ class AddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: ()=>Get.to(()=>AddNewAddressScreen()),child: Icon(Iconsax.add,color: TColors.white,),),
+      floatingActionButton: FloatingActionButton(onPressed: ()=>Get.to(()=>const AddNewAddressScreen()),child: const Icon(Iconsax.add,color: TColors.white,),),
       appBar: TAppBar(
         showBackArrow: true,
         title: Text('Address',style: Theme.of(context).textTheme.headlineSmall,),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
 

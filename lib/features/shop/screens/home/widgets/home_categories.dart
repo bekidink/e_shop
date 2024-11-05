@@ -21,7 +21,7 @@ class THomeCategories extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (_,index){
-      return   TVerticalImageText( image: TImages.electronic, title: 'Shop categories', textColor: TColors.white,onTap: ()=>Get.to(()=>SubCategoriesScreen()),);
+      return   TVerticalImageText( image: TImages.electronic, title: 'Shop categories', textColor: TColors.white,onTap: ()=>Get.to(()=>const SubCategoriesScreen()),);
       }),
     );
   }

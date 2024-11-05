@@ -2,9 +2,7 @@ import 'package:e_shop/common/widgets/custom_shape/containers/rounded_containe.d
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TOrderListItems extends StatelessWidget {
@@ -17,21 +15,21 @@ class TOrderListItems extends StatelessWidget {
       itemCount: 4,
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
-      separatorBuilder: (_,__)=>SizedBox(height: TSizes.spaceBtwItems,),
+      separatorBuilder: (_,__)=>const SizedBox(height: TSizes.spaceBtwItems,),
       itemBuilder: (_,index) {
         return TRoundedContainer(
           showBorder: true,
-          padding: EdgeInsets.all(TSizes.md),
+          padding: const EdgeInsets.all(TSizes.md),
           backgroundColor: dark?TColors.dark:TColors.light,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Iconsax.ship
                   ),
-                  SizedBox(width: TSizes.spaceBtwItems/2,),
+                  const SizedBox(width: TSizes.spaceBtwItems/2,),
                   Expanded(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -46,17 +44,17 @@ class TOrderListItems extends StatelessWidget {
                       ],
                     ),
                   ),
-                  IconButton(onPressed: (){}, icon: Icon(Iconsax.arrow_right_34,size: TSizes.iconSm,))
+                  IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_34,size: TSizes.iconSm,))
                 ],
               ),
-             SizedBox(height: TSizes.spaceBtwItems,),
+             const SizedBox(height: TSizes.spaceBtwItems,),
               Row(
                 children: [
                   Expanded(
                     child: Row(
                       children: [
-                    Icon(Iconsax.tag),
-                    SizedBox(width: TSizes.spaceBtwItems/2,),
+                    const Icon(Iconsax.tag),
+                    const SizedBox(width: TSizes.spaceBtwItems/2,),
                     Expanded(child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,8 +69,8 @@ class TOrderListItems extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: [
-                    Icon(Iconsax.calendar),
-                    SizedBox(width: TSizes.spaceBtwItems/2,),
+                    const Icon(Iconsax.calendar),
+                    const SizedBox(width: TSizes.spaceBtwItems/2,),
                     Expanded(child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,

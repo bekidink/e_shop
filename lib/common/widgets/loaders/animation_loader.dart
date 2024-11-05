@@ -17,10 +17,10 @@ final VoidCallback? onActionPressed;
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(animation,width: MediaQuery.of(context).size.width*0.8),
-          SizedBox(height: TSizes.defaultSpace,),
+          const SizedBox(height: TSizes.defaultSpace,),
           Text(text,style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.center,),
-          SizedBox(height: TSizes.defaultSpace,),
-          showAction?SizedBox(width: 250, child: OutlinedButton(onPressed: onActionPressed, style: OutlinedButton.styleFrom(backgroundColor: TColors.dark),child: Text(actionText!,style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.light),)),):SizedBox()
+          const SizedBox(height: TSizes.defaultSpace,),
+          showAction?SizedBox(width: 250, child: OutlinedButton(onPressed: onActionPressed, style: OutlinedButton.styleFrom(backgroundColor: TColors.dark),child: Text(actionText!,style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.light),)),):const SizedBox()
         ],
       ),
     );

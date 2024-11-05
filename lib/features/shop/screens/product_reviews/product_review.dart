@@ -1,9 +1,7 @@
 import 'package:e_shop/common/widgets/appbar/appbar.dart';
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/size.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -15,18 +13,18 @@ class ProductReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(title: Text('Reviews & Ratings'),showBackArrow: true,),
+      appBar: const TAppBar(title: Text('Reviews & Ratings'),showBackArrow: true,),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(TSizes.defaultSpace), child: Column(
+        child: Padding(padding: const EdgeInsets.all(TSizes.defaultSpace), child: Column(
           
           children: [
-          Text('Ratings and reviews are verified and are from people who use the same type of device that you use'),
-          SizedBox(height: TSizes.spaceBtwItems,),
-          TOverallProductRating(),
-          TRatingBarIndicator(rating: 3.5,),
+          const Text('Ratings and reviews are verified and are from people who use the same type of device that you use'),
+          const SizedBox(height: TSizes.spaceBtwItems,),
+          const TOverallProductRating(),
+          const TRatingBarIndicator(rating: 3.5,),
           Text('12.611',style: Theme.of(context).textTheme.bodyMedium,),
-          SizedBox(height: TSizes.spaceBtwSections,),
-          UserReviewCard()
+          const SizedBox(height: TSizes.spaceBtwSections,),
+          const UserReviewCard()
         ],),),
       ),
     );
@@ -40,7 +38,7 @@ class TRatingBarIndicator extends StatelessWidget {
 final double rating;
   @override
   Widget build(BuildContext context) {
-    return RatingBarIndicator( rating: rating,itemSize: 20,unratedColor: TColors.grey,itemBuilder: (_,__)=>Icon(Iconsax.star1,color: TColors.primary,),);
+    return RatingBarIndicator( rating: rating,itemSize: 20,unratedColor: TColors.grey,itemBuilder: (_,__)=>const Icon(Iconsax.star1,color: TColors.primary,),);
   }
 }
 
@@ -54,7 +52,7 @@ class TOverallProductRating extends StatelessWidget {
     return Row(
       children: [
         Expanded( flex: 3,child: Text('4.8',style: Theme.of(context).textTheme.displayLarge,)),
-        Expanded(
+        const Expanded(
           flex: 7,
           child: Column(
             children: [
@@ -84,7 +82,7 @@ final double value;
     return Row(
       children: [
         Expanded( flex: 1,child: Text(text,style: Theme.of(context).textTheme.bodyMedium,)),
-        Expanded( flex: 11,child: LinearProgressIndicator(value: value, minHeight: 11, backgroundColor: TColors.grey, valueColor: AlwaysStoppedAnimation(TColors.primary), borderRadius: BorderRadius.circular(7),))
+        Expanded( flex: 11,child: LinearProgressIndicator(value: value, minHeight: 11, backgroundColor: TColors.grey, valueColor: const AlwaysStoppedAnimation(TColors.primary), borderRadius: BorderRadius.circular(7),))
       ],
     );
   }

@@ -15,7 +15,7 @@ class TBillAmountSection extends StatelessWidget {
             Text('300',style: Theme.of(context).textTheme.bodyMedium,),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems/2,),
+        const SizedBox(height: TSizes.spaceBtwItems/2,),
          Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -23,7 +23,7 @@ class TBillAmountSection extends StatelessWidget {
             Text('30',style: Theme.of(context).textTheme.bodyMedium,),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems/2,),
+        const SizedBox(height: TSizes.spaceBtwItems/2,),
          Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -31,7 +31,7 @@ class TBillAmountSection extends StatelessWidget {
             Text('30',style: Theme.of(context).textTheme.bodyMedium,),
           ],
         ),
-          SizedBox(height: TSizes.spaceBtwItems/2,),
+          const SizedBox(height: TSizes.spaceBtwItems/2,),
          Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

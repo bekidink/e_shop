@@ -24,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           children: [
             Text('Create an Account',style: Theme.of(context).textTheme.headlineMedium,),
            const SizedBox(height: TSizes.spaceBtwSections,),
-         TSignupForm(),
+         const TSignupForm(),
             signUpFormDivider(context),
              const  SizedBox(height: TSizes.spaceBtwSections,),
         signUpSocial()

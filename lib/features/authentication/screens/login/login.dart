@@ -57,7 +57,7 @@ Text(TTexts.onBoardingSubTitle1,style: Theme.of(context).textTheme.bodyMedium,)
                       obscureText: controller.hidePassword.value,
                       validator: (value) => TValidator.validatePassword(value),
                       decoration:  InputDecoration(
-                        prefixIcon: Icon(Icons.password),
+                        prefixIcon: const Icon(Icons.password),
                         labelText: 'Password',
                         suffixIcon:IconButton(onPressed: ()=>controller.hidePassword.value=!controller.hidePassword.value, icon: Icon(controller.hidePassword.value?Iconsax.eye:Iconsax.eye_slash))
                       ),
