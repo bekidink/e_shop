@@ -84,7 +84,7 @@ class _StoreScreenState extends State<StoreScreen> {
                 ],),
                 HeadingTitle(title: 'You might like',showActionButton: true,onPressed: (){}, ),
                 const SizedBox(height: TSizes.spaceBtwItems,),
-                TGridLayout(itemCount: 4, itemBuilder: (_,index)=>const ProductCardVertical()),
+                // TGridLayout(itemCount: 4, itemBuilder: (_,index)=>const ProductCardVertical()),
                 const SizedBox(height: TSizes.spaceBtwSections,)
               ],
             ),)],

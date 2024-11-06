@@ -7,12 +7,13 @@ import '../../../utils/helpers/helper_functions.dart';
 
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
-    super.key, required this.image, required this.title, required this.textColor, this.backgroundColor, this.onTap,
+    super.key, required this.image, required this.title, required this.textColor, this.backgroundColor, this.onTap,  this.isNetwork=false,
   });
 final String image,title;
 final Color textColor;
 final Color? backgroundColor;
 final void Function()? onTap;
+final bool isNetwork;
   @override
   Widget build(BuildContext context) {
     final dark=THelperFunctions.isDarkMode(context);
@@ -28,7 +29,7 @@ final void Function()? onTap;
                 padding: const EdgeInsets.all(TSizes.sm),
                 decoration: BoxDecoration(color: backgroundColor??(dark?TColors.black:TColors.white),borderRadius: BorderRadius.circular(100)),
                 child:  Center(
-                  child: Image(image: AssetImage(image),fit: BoxFit.cover,),
+                  child: Image(image:isNetwork?NetworkImage(image): AssetImage(image) as ImageProvider,fit: BoxFit.cover,),
                 ),
               ),
               const SizedBox(height: TSizes.spaceBtwItems / 5,),

@@ -1,6 +1,8 @@
 import 'package:e_shop/data/repositories/authentication/authentication_rep.dart';
 import 'package:e_shop/features/authentication/screens/onboarding.dart';
 import 'package:e_shop/firebase_options.dart';
+import 'package:e_shop/routes/app_routes.dart';
+import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       initialBinding: GeneralBindings(),
-      home:const OnBoardingScreen()
+      getPages: AppRoutes.pages,
+      home:Scaffold( backgroundColor: TColors.primary, body: Center(child: CircularProgressIndicator(color: TColors.white,),),)
     );
   }
 }

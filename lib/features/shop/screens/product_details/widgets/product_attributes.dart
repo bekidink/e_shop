@@ -3,20 +3,25 @@ import 'package:e_shop/common/widgets/custom_shape/containers/rounded_containe.d
 import 'package:e_shop/common/widgets/products/product_cards/poduct_price_title.dart';
 import 'package:e_shop/common/widgets/products/product_cards/product_title.dart';
 import 'package:e_shop/common/widgets/texts/heading_title.dart';
+import 'package:e_shop/features/shop/controllers/variation_controller.dart';
+import 'package:e_shop/features/shop/models/product_model.dart';
 import 'package:e_shop/utils/constants/colors.dart';
 import 'package:e_shop/utils/constants/size.dart';
 import 'package:e_shop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TProductAttributes extends StatelessWidget {
-  const TProductAttributes({super.key});
-
+  const TProductAttributes({super.key, required this.product});
+ final ProductModel product;
   @override
   Widget build(BuildContext context) {
     final dark=THelperFunctions.isDarkMode(context);
+    final controller=Get.put(VariationController());
     return Column(
       children: [
-        TRoundedContainer(
+        if(controller.selectedVariation.value.id.isNotEmpty)
+          TRoundedContainer(
           backgroundColor: dark?TColors.darkerGrey:TColors.grey,
           child: Column(
             children: [
@@ -32,60 +37,79 @@ class TProductAttributes extends StatelessWidget {
                         children: [
                            const ProductTitle(title: 'Price',smallSize: true,),
                            const SizedBox(width: TSizes.spaceBtwItems,),
-                          Text('\$25',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
+                          Text('\$${controller.selectedVariation.value.price}',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
                           const SizedBox(width: TSizes.spaceBtwItems,),
-                          const TProductPriceText(price: '20')
+                           TProductPriceText(price: '${controller.getVariationPrice()}')
                         ],
                       ),
                       Row(
                         children: [
                           const ProductTitle(title: 'Stock'),
-                          Text('In Stock',style: Theme.of(context).textTheme.titleMedium,)
+                          Text(controller.variationStockStatus.value,style: Theme.of(context).textTheme.titleMedium,)
                         ],
                       )
                     ],
                   )
+               
+               
+               
                 ],
               ),
-              const ProductTitle(title: 'This is the Description of the Product and it can go upto max 4 lines',smallSize: true, maxLines: 4,)
+               ProductTitle(title: controller.selectedVariation.value.description!,smallSize: true, maxLines: 4,)
             ],
           ),
         ),
         const SizedBox(
           height: TSizes.spaceBtwItems,
         ),
-        Column(
+        Column(crossAxisAlignment: CrossAxisAlignment.start, children:
+         product.productAttributes!.map((attr) =>Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeadingTitle(title: 'Colors'),
+             HeadingTitle(title: attr.name??''),
             const SizedBox(height: TSizes.spaceBtwItems,),
-            Wrap(
-              spacing: 8,
-              children: [
-TChoiceChip(text: 'Green', selected: true,onSelected: (value){},),
-            TChoiceChip(text: 'Blue', selected: true,onSelected: (value){}),
-            TChoiceChip(text: 'Yellow', selected: true,onSelected: (value){}),
-              ],
+            Obx(
+              ()=> Wrap(
+                spacing: 8,
+                children:attr.values!.map((attrValue) {
+                  final isSelected=controller.selectedAttributes[attr.name];
+                  final available=controller.getAttributesAvailabilityInVariation(product.productVariations!, attr.name!).contains(attrValue);
+              
+               return   TChoiceChip(text: attrValue, selected: isSelected??false,onSelected: available? (value){
+                if(value && available){
+                  controller.onAttributeSelected(product, attr.name??'', attrValue);
+                }
+               }:null,);
+                }, ).toList()
+                
+                
+              ),
             )
             
           ],
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HeadingTitle(title: 'Colors'),
-            const SizedBox(height: TSizes.spaceBtwItems,),
-            Wrap(
-              spacing: 8,
-              children: [
- TChoiceChip(text: 'EU 34', selected: true,onSelected: (value){},),
-            TChoiceChip(text: 'EU 36', selected: true,onSelected: (value){}),
-            TChoiceChip(text: 'EU 38', selected: true,onSelected: (value){}),
-              ],
-            )
+       
+        ).toList(),),
+        
+//         Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             const HeadingTitle(title: 'Colors'),
+//             const SizedBox(height: TSizes.spaceBtwItems,),
+//             Wrap(
+//               spacing: 8,
+//               children: [
+//  TChoiceChip(text: 'EU 34', selected: true,onSelected: (value){},),
+//             TChoiceChip(text: 'EU 36', selected: true,onSelected: (value){}),
+//             TChoiceChip(text: 'EU 38', selected: true,onSelected: (value){}),
+//               ],
+//             )
            
-          ],
-        )
+//           ],
+//         )
+    
+    
+    
       ],
     );
   }

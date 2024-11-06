@@ -1,9 +1,14 @@
+import 'package:e_shop/common/dummy_data.dart';
 import 'package:e_shop/common/widgets/appbar/appbar.dart';
 import 'package:e_shop/common/widgets/image/circular_image.dart';
 import 'package:e_shop/common/widgets/texts/heading_title.dart';
+import 'package:e_shop/data/repositories/banners/banner_repo.dart';
+import 'package:e_shop/data/repositories/categories/categories_repo.dart';
+import 'package:e_shop/data/repositories/products/product_repo.dart';
 import 'package:e_shop/features/personalization/screens/address/address.dart';
 import 'package:e_shop/features/personalization/screens/profile/profile.dart';
 import 'package:e_shop/features/personalization/screens/widgets/menu_tile.dart';
+import 'package:e_shop/features/shop/controllers/category_controller.dart';
 import 'package:e_shop/features/shop/screens/home/home.dart';
 import 'package:e_shop/features/shop/screens/order/order.dart';
 import 'package:e_shop/utils/constants/colors.dart';
@@ -20,6 +25,7 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categoryController=CategoryController.instance;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -38,7 +44,7 @@ class SettingsScreen extends StatelessWidget {
                  TSettingMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery',onTap: ()=>Get.to(()=>const AddressScreen()),),
                 const TSettingMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove product'),
                  TSettingMenuTile(icon: Iconsax.bag_tick, title: 'My Orders', subTitle: 'In-progress and complete',onTap: ()=>Get.to(()=>const OrderScreen()),),
-                const TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
+                 TSettingMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account',onTap: ()=>BannerRepository.instance.uploadDummyData(TDummyData.banners),),
                 const TSettingMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discount coupon'),
                 const TSettingMenuTile(icon: Iconsax.notification, title: 'Notifications', subTitle: 'Set any kind of notification message'),
                 const TSettingMenuTile(icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage'),
